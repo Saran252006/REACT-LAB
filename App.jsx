@@ -1,15 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function App() {
+function Calculator() {
+  const [num1,setNum1]=useState("")
+  const [num2,setNum2]=useState("")
+
+  const a=Number(num1);
+  const b=Number(num2);
+
   return (
     <div>
-      <p class="bg-amber-100">Lorem ipsum dolor sit amet.</p>
-      <p class="bg-amber-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, similique. lorem10</p>
-      <p class="bg-amber-500">Lorem ipsum dolor sit amet consectetur</p>
-      <p class="bg-amber-300">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
-      <p class="bg-amber-600">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <h1 style={{textDecoration:"underline"}}>Calculator</h1>
+      <input type="number" placeholder='enter the first value'
+      onChange={(e)=>setNum1(e.target.value)}/>
+      <input type="number" placeholder='enter the second value'
+      onChange={(e)=>setNum2(e.target.value)}/>
+      <div style={{height:"200px",
+        width:"200px",
+        border:"1px solid",
+        marginLeft:"570px",
+        marginTop:"20px",
+        background:"lightblue",
+        textAlign:"left"}}>
+          <h3>result:</h3>
+        <p><strong>addition:</strong>{a+b}</p>
+        <p><strong>subtraction:</strong>{a-b}</p>
+        <p><strong>multiplication:</strong>{a*b}</p>
+        <p><strong>division:</strong>{b==0 ?"|cant divided by zero":a/b}</p>
+
+
+
+      </div>
     </div>
   )
 }
 
-export default App
+export default Calculator
